@@ -1,33 +1,16 @@
-import React, {useState, createContext} from "react";
-
-import {useNavigate} from "react-router-dom";
+import {useState, createContext} from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
 
-    const navigate = useNavigate();
-    const [user, setUser] = useState(null);
-
-    const login = (email, password) => {
-        console.log('login', {email, password})       
-
-        if (password === '12341234' && email === 'desafio@ioasys.com.br') {
-            setUser(true);
-            navigate("/");
-
-        } else {
-            alert("Email e/ou senha incorretos.")
-        }
-    };
-
-    const logout = () => {
-        setUser(null);
-        navigate("/login");
-    }
+    const [userId, setUserID] = useState(null);
+    const [name, setName] = useState(null);
+    const [birthDate, setBirthDate] = useState(null);
+    const [gender, setGender] = useState(null);
 
     return (
-        <AuthContext.Provider value={{authenticated: !!user, user, login, logout}}>
+        <AuthContext.Provider value={{ userId, setUserID, name, setName, birthDate, setBirthDate, gender, setGender }}>
             {children}
         </AuthContext.Provider>
     )

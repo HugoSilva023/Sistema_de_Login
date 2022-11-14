@@ -1,4 +1,7 @@
 import style from "./GaleriaBooks.module.css"
+import api from "../../services/api";
+
+/** Importando as imagens */
 import Logo from './images/Logo.png';
 import Chave from './images/Chave.png';
 import Seta from './images/Seta.png';
@@ -15,10 +18,21 @@ import Book_Hooked from './images/Book_Hooked.png'
 import Book_TheUnknownBook from './images/Book_TheUnknownBook.png'
 import Paginacao from './images/Paginacao.png'
 
-
-
-
 function GaleriaBooks () {
+
+    async function getDataBooks() {
+        try {
+            const {data} = await api.get('/books?' + `page=1`);
+            console.log(data)
+        } catch (error) {
+            console.warn(error)
+        }
+    }
+
+    
+
+    getDataBooks();
+
     return (
         <div className="container pt-4">
 
