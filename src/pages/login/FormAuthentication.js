@@ -5,6 +5,7 @@ import api, { setAuthToken } from '../../services/api'
 
 import style from './FormAuthentication.module.css';
 import Logo from './images/Logo.png';
+import styled from 'styled-components';
 
 
 
@@ -123,7 +124,7 @@ function FormAuthentication () {
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
-                                        <button type="submit" className={style.buttonBox}>Entrar</button>
+                                        <Button>Entrar</Button>
                                     </div>
                                 </label>
                             </div>
@@ -134,5 +135,19 @@ function FormAuthentication () {
         </div>
     )
 }
+
+//Component Button
+const Button = styled.button`
+    background: #FFFFFF;
+    border-radius: 44px;
+    border: none;
+    padding: 8px 20px;
+    margin-left: auto;
+
+    font-family: 'Heebo Medium';
+    font-size: 16px;
+    line-height: 20px; 
+    color: #B22E6F;
+`;
 
 export default FormAuthentication;
