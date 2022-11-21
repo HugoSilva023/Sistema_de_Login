@@ -1,21 +1,18 @@
-import { useState, useEffect } from "react";
-
+import React, { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/Authenticator'
 
 import * as S from "./GaleriaBooks.styles"
 import api from "../../services/api";
 
-
-
-
 function GaleriaBooks () {
 
-
-
     const [listBooks, setListBooks] = useState();
+    const {page} = useContext(AuthContext);
 
     async function getDataBooks() {
         try {
-            const {data} = await api.get('/books?page=1');
+            const {data} = await api.get(`/books?page=${page}`);
             const books = data.data;
             setListBooks(books);
         } catch (error) {
@@ -25,8 +22,7 @@ function GaleriaBooks () {
 
     useEffect(() => {
         getDataBooks();
-        console.log(listBooks);
-    },[])
+    },[page])
     
     return (
         <>
