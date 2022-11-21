@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Heebo Light';
-    src: url('../../../public/fonts_heebo/Heebo-Light.ttf') format('truetype');
+    src: url('../../fonts_heebo/Heebo-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Heebo Medium';
-    src: url('../../../public/fonts_heebo/Heebo-Medium.ttf') format('truetype');
+    src: url('../../fonts_heebo/Heebo-Medium.ttf') format('truetype');
 }
 
 .boxLogo{

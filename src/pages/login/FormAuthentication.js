@@ -15,13 +15,7 @@ function FormAuthentication () {
 
     const [email, setEmail] = useState("desafio@ioasys.com.br");
     const [password, setPassword] = useState("12341234");
-
-    const {userId, setUserID} = useContext(AuthContext);
-    const {name, setName} = useContext(AuthContext);
-    const {birthDate, setBirthDate} = useContext(AuthContext);
-    const {gender, setGender} = useContext(AuthContext);
-
-    const url = 'https://books.ioasys.com.br/api/v1/auth/sign-in';
+    const { setName } = useContext(AuthContext);
     
     const Login = async () => {
 
@@ -35,8 +29,7 @@ function FormAuthentication () {
             try {
 
                 const {data, headers} = await api.post('/auth/sign-in', userData);
-
-                const {name} = data;
+             //   const {name} = data;
                 const {authorization} = headers;
 
                 setAuthToken(authorization);
@@ -47,39 +40,15 @@ function FormAuthentication () {
                     localStorage.setItem("token", authorization);
                 }
 
-                setUserID(data.id);
                 setName(data.name);
-                setBirthDate(data.birthdate);
-                setGender(data.gender);
 
             } catch (error) {
                 console.log(error)
+                alert(`Senha e/ou email incorretos`)
             }
         }        
         getDataLogin()
     }
-
-/**     async function getDataLogin() {
-            
-            const response = await fetch(url, {
-                method: "POST",
-                body:JSON.stringify(userData),
-                headers: {
-                    "Content-type": "application/json",
-                },
-            });
-
-            const data = await response.json();
-
-            
-            console.log(data);
-            console.log(data.name);
-        }
-
-        getDataLogin()
-        
-    }
-*/  
 
     function handleSubmit (e) {
         e.preventDefault();
@@ -136,6 +105,7 @@ function FormAuthentication () {
     )
 }
 
+// styles-components
 //Component Button
 const Button = styled.button`
     background: #FFFFFF;
