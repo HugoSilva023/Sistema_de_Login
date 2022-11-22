@@ -27,14 +27,14 @@ function GaleriaBooks () {
     return (
         <>
             <S.Global>
-                <div className="row">
+                <S.Grid>
                     {
                         listBooks && 
                             listBooks.map(
                                 (book) => {
-                                    return <>
-                                            <div className="col-lg-3 pt-3">
-                                                <S.Card>
+                                    
+                                            
+                                    return   <S.Card>
                                                     <div className="row">
                                                         <span className="col-4">
                                                             <img className="pt-3 ms-1" src={book.imageUrl} style={{width: "80px"}} alt="Capa do livro"/>
@@ -58,12 +58,12 @@ function GaleriaBooks () {
                                                         </span> 
                                                     </div>
                                                 </S.Card>
-                                            </div>
-                                        </>
+                                            
+                                        
                                 }
                             )
                     }
-                </div> 
+                </S.Grid> 
             </S.Global>
         </>
     )
