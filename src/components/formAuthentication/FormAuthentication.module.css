@@ -72,3 +72,21 @@ input{
     line-height: 20px; 
     color: #B22E6F;
 }
+
+.msg {
+    display: inline-block;
+    margin-top: 24px;
+    border-radius: 4px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+}
+
+.msg p {
+    padding: 16px 16px 0 16px;
+    font-family: 'Heebo Medium';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
