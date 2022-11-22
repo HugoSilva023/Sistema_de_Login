@@ -18,7 +18,7 @@ export const Global = styled.div`
 
 // Component Card
 export const Card = styled.button`
-    width: 272px;
+    width: 100%;
     height: 160px;
     background: #FFFFFF;
     box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
@@ -51,3 +51,9 @@ export const Details = styled.span`
     line-height: 20px;
     color: #999999;
 `;
+
+export const Grid = styled.div`
+ display: grid;
+ gap: 16px;
+ grid-template-columns: repeat(auto-fit, 272px);
+`
