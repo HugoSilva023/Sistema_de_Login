@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import api, { setAuthToken } from '../../services/api'
 
 import style from './FormAuthentication.module.css';
-import Logo from './images/Logo.png';
+import Logo from '../../pages/login/images/Logo.png';
 import styled from 'styled-components';
 
 
@@ -15,6 +15,7 @@ function FormAuthentication () {
 
     const [email, setEmail] = useState("desafio@ioasys.com.br");
     const [password, setPassword] = useState("12341234");
+    const [msg, setMsg] = useState(null);
     const { setName } = useContext(AuthContext);
     
     const Login = async () => {
@@ -29,7 +30,6 @@ function FormAuthentication () {
             try {
 
                 const {data, headers} = await api.post('/auth/sign-in', userData);
-             //   const {name} = data;
                 const {authorization} = headers;
 
                 setAuthToken(authorization);
@@ -43,8 +43,9 @@ function FormAuthentication () {
                 setName(data.name);
 
             } catch (error) {
-                console.log(error)
-                alert(`Senha e/ou email incorretos`)
+                const resp = JSON.parse(error.request.response);
+                const {message} = resp.errors;
+                setMsg(message)
             }
         }        
         getDataLogin()
@@ -98,6 +99,11 @@ function FormAuthentication () {
                                 </label>
                             </div>
                         </div>
+                        { msg &&   
+                            <div className={style.msg}>
+                                <p>{msg}</p>
+                            </div>
+                        }
                     </form >
                 </div>
             </div>

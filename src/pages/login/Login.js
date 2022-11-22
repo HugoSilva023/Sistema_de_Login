@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Login.module.css';
-import FormAuthentication from './FormAuthentication';
+import FormAuthentication from '../../components/formAuthentication/FormAuthentication';
 
 
 function Login () {
