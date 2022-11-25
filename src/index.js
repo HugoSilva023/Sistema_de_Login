@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import * as S from './index.styles';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "styled-components";
+import { theme } from './styles/theme'
 
 // Context
 import { AuthProvider } from "./contexts/Authenticator";
@@ -10,9 +12,15 @@ import { AuthProvider } from "./contexts/Authenticator";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <S.Code>
+      <S.Body>
+        <ThemeProvider theme={theme}>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </ThemeProvider>
+      </S.Body>
+    </S.Code>
   </React.StrictMode>
 );
 
