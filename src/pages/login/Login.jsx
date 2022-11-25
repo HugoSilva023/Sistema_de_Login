@@ -1,15 +1,15 @@
 import React from 'react';
-import style from './Login.module.css';
+import * as S from "./Login.styles";
 import FormAuthentication from '../../components/formAuthentication/FormAuthentication';
 
 
 function Login () {
     return (
-        <div className={style.body}>
+        <S.Body>
             <div className='container-flex'>
                 <FormAuthentication />
             </div>
-        </div>
+        </S.Body>
     );
 };
 
