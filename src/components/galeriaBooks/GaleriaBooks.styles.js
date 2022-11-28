@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import Regular from "../../fonts_heebo/Heebo-Regular.ttf"
 import Medium from "../../fonts_heebo/Heebo-Medium.ttf"
@@ -34,7 +34,7 @@ export const Title = styled.span`
     font-family: 'Heebo Medium';
     font-size: 14px;
     line-height: 20px;
-    color: ${props => props.theme.Black};
+    color: ${props => props.theme.colors.black};
 `;
 
 // Component Author
@@ -42,7 +42,7 @@ export const Author = styled.span`
     font-family: 'Heebo Regular';
     font-size: 12px;
     line-height: 20px;
-    color: ${props => props.theme.Pink};
+    color: ${props => props.theme.colors.pink};
 `;
 
 // Components Details
@@ -50,7 +50,7 @@ export const Details = styled.span`
     font-family: 'Heebo Regular';
     font-size: 12px;
     line-height: 20px;
-    color: ${props => props.theme.Grey};
+    color: ${props => props.theme.colors.grey};
 `;
 
 export const Grid = styled.div`

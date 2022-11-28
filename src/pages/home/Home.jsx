@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 
 import * as S from "./Home.styles";
-import GaleriaBooks from "../../components/galeriaBooks"
-import Footer from '../../components/footer';
-import Header from '../../components/header'
+import GaleriaBooks from "../../components/galeriaBooks";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 
-function Home() {   
-
-    return (
-        <S.Body>
-            <div className="container pt-4">
-                <Header />
-                <GaleriaBooks />
-                <Footer />
-            </div>
-        </S.Body>
-    );
-};
+function Home() {
+  return (
+    <S.Body>
+        <S.Cards className="">
+          <Header />
+          <GaleriaBooks />
+          <Footer />
+        </S.Cards>
+    </S.Body>
+  );
+}
 
 export default Home;

@@ -25,7 +25,7 @@ export const Book = styled.span `
     top: 268px;
 
     font-size: 28px;
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.white};
 `
 
 export const BoxEmail = styled.div `
@@ -36,7 +36,7 @@ export const Box = styled.div `
     background: rgba(0, 0, 0, 0.32);
     border-radius: 4px;
     backdrop-filter: blur(1px);
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.white};
     font-family: 'Heebo Light';
     font-style: normal;
     font-weight: 400;
@@ -44,8 +44,7 @@ export const Box = styled.div `
 
 export const Input = styled.input `
     background: none;
-
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.white};
     border: none;
 `
 
@@ -68,16 +67,18 @@ export const BoxPassword = styled.div `
 `
 
 export const Button = styled.button`
-    background: #FFFFFF;
+    position: sticky;
+    color: ${props => props.theme.colors.white};
     border-radius: 44px;
     border: none;
     padding: 8px 20px;
-    margin-left: auto;
+    margin-left: 90px;
+    top: -20px;
 
     font-family: 'Heebo Medium';
     font-size: 16px;
     line-height: 20px; 
-    color: #B22E6F;
+    color: ${props => props.theme.colors.pinkDark};
 `
 
 export const MsgBox = styled.div `
@@ -94,5 +95,5 @@ export const Msg = styled.span `
     font-weight: 700;
     font-size: 16px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.white};
 `

@@ -63,7 +63,7 @@ function FormAuthentication() {
                             <label htmlFor="email">
                                 <S.TitleBox>Email</S.TitleBox>
                                 <S.InputBox>
-                                    <input
+                                    <S.Input
                                     type="email"
                                     name="email"
                                     id="email"
@@ -79,7 +79,7 @@ function FormAuthentication() {
                             <label htmlFor="password">
                                 <S.TitleBox>Senha</S.TitleBox>
                                 <S.InputBox>
-                                    <input
+                                    <S.Input
                                     type="password"
                                     name="password"
                                     id="password"

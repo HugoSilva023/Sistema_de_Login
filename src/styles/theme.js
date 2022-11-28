@@ -1,5 +1,10 @@
 export const theme = {
-    Pink: "#AB2680",
-    Black: "#333333",
-    Grey: "#999999"
+    colors: {
+        pink: "#AB2680",
+        pinkDark: "#B22E6F",
+        black: "#333333",
+        grey: "#999999",
+        white: "#FFFFFF"
+    }
+    
 }

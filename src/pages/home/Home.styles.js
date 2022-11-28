@@ -12,3 +12,10 @@ export const Body = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
 `
+
+export const Cards = styled.span`
+    position: relative;
+    top: 120px;
+    left: 115px;
+    max-width: 1280px;
+`

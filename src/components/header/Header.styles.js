@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const LogoBook = styled.span`
     margin-left: 16px;
     font-size: 28px;
-    color: #333333;
+    color: ${props => props.theme.colors.white};
 `;
 
 // Component LogoutButton
