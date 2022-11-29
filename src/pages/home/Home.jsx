@@ -4,15 +4,19 @@ import * as S from "./Home.styles";
 import GaleriaBooks from "../../components/galeriaBooks";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
+import Wrapper from "../../components/wrapper";
 
 function Home() {
   return (
     <S.Body>
-        <S.Cards className="">
-          <Header />
-          <GaleriaBooks />
-          <Footer />
-        </S.Cards>
+        {/* <S.Cards> */}
+          <Wrapper>
+              <Header />            
+              <GaleriaBooks />
+              <Footer />
+
+          </Wrapper>
+        {/* </S.Cards> */}
     </S.Body>
   );
 }
