@@ -78,7 +78,7 @@ export const Button = styled.button`
     font-family: 'Heebo Medium';
     font-size: 16px;
     line-height: 20px; 
-    color: ${props => props.theme.colors.pinkDark};
+    color: ${props => props.theme.colors.pink45};
 `
 
 export const MsgBox = styled.div `

@@ -15,6 +15,8 @@ const Header = () => {
     const navigate = useNavigate();
     const {name, setName} = useContext(AuthContext);
 
+    
+
     const logout = () => {
         navigate("/");
         localStorage.removeItem("token");
@@ -23,7 +25,7 @@ const Header = () => {
 
   return (
     <div>
-        <div className="row justify-content-between pb-4">
+        <div className="row justify-content-between pb-4 pt-4">
             <div className="col-5 display-block">
                 <img src={Logo} alt="Ioasys logo"/>
                 <span className="align-bottom d-xs-inline">
