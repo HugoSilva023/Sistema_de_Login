@@ -55,14 +55,44 @@ export const Details = styled.span`
 `;
 
 export const Grid = styled.div`
- display: grid;
- gap: 16px;
- grid-template-columns: repeat(auto-fit, 272px);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, 272px);
+`
+
+export const DialogOverlay = styled(Dialog.Overlay) `
+    background-color: rgba(128, 128, 128, 0.644);
+    position: fixed;
+    inset: 0;
+    animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+`
+
+export const DialogContent = styled(Dialog.Content)`
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 769px;
+    height: 608px;
+//    max-width: 450px;
+//    max-height: 85vh;
+    padding: 25px;
+    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
 
 export const DialogDescription = styled(Dialog.Description)`
-margin: 10px 0 20px;
-color: violet;
-font-size: 15px;
-line-height: 1.5;
+    margin: 10px 0 20px;
+    color: violet;
+    font-size: 15px;
+    line-height: 1.5;
+`
+
+export const ModalImg = styled.img`
+    position: absolute;
+    width: 349px;
+    height: 512.29px;
+    filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
 `

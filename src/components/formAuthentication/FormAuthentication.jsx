@@ -51,8 +51,8 @@ function FormAuthentication() {
   return (
     <S.Global>
         <div className="container">
-            <div class="row align-items-end">
-                <div class="col-md-7 col-lg-5 col-sm-12">
+            <div className="row align-items-end">
+                <div className="col-md-7 col-lg-5 col-sm-12">
                 <form onSubmit={handleSubmit}>
                     <S.BoxLogo>
                         <img src={Logo} alt="Ioasys logo" />

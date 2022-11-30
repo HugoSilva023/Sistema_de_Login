@@ -9,14 +9,13 @@ import api from "../../services/api";
 
 function GaleriaBooks() {
   const [listBooks, setListBooks] = useState();
-  const { page } = useContext(AuthContext);
+  const { page, theBook, setTheBook } = useContext(AuthContext);
 
   async function getDataBooks() {
     try {
       const { data } = await api.get(`/books?page=${page}`);
       const books = data.data;
       setListBooks(books);
-      console.log(data)
     } catch (error) {
       console.warn(error);
     }
@@ -25,6 +24,10 @@ function GaleriaBooks() {
   useEffect(() => {
     getDataBooks();
   }, [page]);
+
+  function openDescriptionBook(book) {
+    setTheBook(book)
+  }
 
   return (
     <>
@@ -35,7 +38,10 @@ function GaleriaBooks() {
               return (
 
                 <Dialog.Root>
-                  <Dialog.Trigger asChild>
+                  <Dialog.Trigger
+                    asChild
+                    onClick={() => openDescriptionBook(book)}
+                  >
 
                     <S.Card>
                       <div className="row">
@@ -73,13 +79,16 @@ function GaleriaBooks() {
                   
                   </Dialog.Trigger>
                   <Dialog.Portal>
-                    <Dialog.Overlay className="DialogOverlay" />
-                    <Dialog.Content className="DialogContent">
-                      <S.DialogDescription className="DialogDescription">{book.title}</S.DialogDescription>
-                      <Dialog.Close>
-                        botão close
-                      </Dialog.Close>
-                    </Dialog.Content>
+                    <S.DialogOverlay />
+                    <S.DialogContent>
+                      <S.DialogDescription>
+                          <S.ModalImg src={theBook.imageUrl} />
+                        )
+                        {theBook.title}
+
+                      </S.DialogDescription>
+                      <Dialog.Close> X </Dialog.Close>
+                    </S.DialogContent>
                   </Dialog.Portal>
                 </Dialog.Root>
               );

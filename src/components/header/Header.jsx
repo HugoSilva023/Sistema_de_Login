@@ -15,7 +15,7 @@ const Header = () => {
     const navigate = useNavigate();
     const {name, setName} = useContext(AuthContext);
 
-    
+    const userName = name.slice(0, 11);
 
     const logout = () => {
         navigate("/");
@@ -33,7 +33,7 @@ const Header = () => {
                 </span>
             </div>
             <div className="col-3">
-                <span className="d-none d-md-block d-lg-inline">Bem vindo, {name}! </span>
+                <span className="d-none d-md-block d-lg-inline">Bem vindo, {userName}! </span>
                 <S.LogoutButton onClick={logout}>
                     <S.IconBack src={Chave} alt="Ioasys logo"/>
                     <S.IconRight src={Seta} alt="Ioasys logo"/>
