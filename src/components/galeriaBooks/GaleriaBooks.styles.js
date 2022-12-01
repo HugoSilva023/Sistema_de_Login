@@ -69,7 +69,7 @@ export const DialogOverlay = styled(Dialog.Overlay) `
 
 export const DialogContent = styled(Dialog.Content)`
     background-color: white;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
     position: fixed;
     top: 50%;
@@ -82,7 +82,7 @@ export const DialogContent = styled(Dialog.Content)`
     padding: 25px;
     animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
-
+// Grid do Modal
 export const DialogDescription = styled(Dialog.Description)`
     margin: 10px 0 20px;
     color: violet;
@@ -90,9 +90,84 @@ export const DialogDescription = styled(Dialog.Description)`
     line-height: 1.5;
 `
 
+export const ModalGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+`
+
+export const ModalGridImage = styled.div`
+    grid-area: left;
+`
+export const ModalGridDescription = styled.div`
+    grid-area: right;
+`
+
 export const ModalImg = styled.img`
     position: absolute;
     width: 349px;
     height: 512.29px;
     filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
+`
+
+export const ModalTitle = styled.div`
+    width: 276px;
+
+    padding-bottom: 0;
+
+    font-family: 'Heebo Medium';
+    font-size: 28px;
+    color: ${props => props.theme.colors.black};
+`
+
+export const ModalAuthor = styled.div`
+    width: 276px;
+    height: 20px;
+    margin-left: 400px;
+
+    font-family: 'Heebo Regular';
+    font-size: 12px;
+    /* identical to box height, or 167% */
+    color: ${props => props.theme.colors.pink40};
+`
+
+export const ModalContainerInfo = styled.div`
+    display: grid;
+    margin-left: 220px;
+`
+
+export const ModalTags = styled.div`
+    grid-area: left;
+
+    font-family: 'Heebo Medium';
+    font-size: 12px;
+    text-align: left;
+    color: ${props => props.theme.colors.black};
+`
+
+export const ModalInfos = styled.div`
+    grid-area: right;
+
+    font-family: 'Heebo Regular';
+    font-size: 12px;
+    text-align: right;
+    color: ${props => props.theme.colors.grey};
+`
+
+export const ModalResenha = styled.div`
+    margin-left: 400px;
+`
+
+export const ModalResenhaTitle = styled.div`
+    font-family: 'Heebo Medium';
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: ${props => props.theme.colors.black};
+`
+
+export const ModalResenhaContent = styled.div`
+    font-family: 'Heebo Regular';
+    font-size: 12px;
+    line-height: 20px;
+    color: ${props => props.theme.colors.grey};
 `

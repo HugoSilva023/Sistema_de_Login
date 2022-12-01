@@ -27,7 +27,11 @@ function GaleriaBooks() {
 
   function openDescriptionBook(book) {
     setTheBook(book)
+    console.log(book)
   }
+
+  console.log(listBooks)
+  
 
   return (
     <>
@@ -38,10 +42,7 @@ function GaleriaBooks() {
               return (
 
                 <Dialog.Root>
-                  <Dialog.Trigger
-                    asChild
-                    onClick={() => openDescriptionBook(book)}
-                  >
+                  <Dialog.Trigger asChild onClick={() => openDescriptionBook(book)} >
 
                     <S.Card>
                       <div className="row">
@@ -82,15 +83,60 @@ function GaleriaBooks() {
                     <S.DialogOverlay />
                     <S.DialogContent>
                       <S.DialogDescription>
-                          <S.ModalImg src={theBook.imageUrl} />
-                        )
-                        {theBook.title}
+
+                        <S.ModalGrid>
+
+                          <S.ModalGridImage>
+                            <S.ModalImg src={theBook.imageUrl} />
+                          </S.ModalGridImage>
+
+                          <S.ModalGridDescription>
+                            <S.ModalTitle>{theBook.title}</S.ModalTitle>
+
+                            <S.ModalAuthor>{theBook.authors && theBook.authors.join(", ")}</S.ModalAuthor>
+                            <S.ModalContainerInfo>
+                              <S.ModalTags>
+                                <p>INFORMAÇÕES</p>
+                                <br />
+                                <p>Páginas</p>
+                                <p>Editora</p>
+                                <p>Publicação</p>
+                                <p>Idioma</p>
+                                <p>Titulo Original</p>
+                                <p>ISBN-10</p>
+                                <p>ISBN-13</p>
+                              </S.ModalTags>
+                              <S.ModalInfos>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{theBook.pageCount} páginas</p>
+                                <p>Editora {theBook.publisher}</p>
+                                <p>{theBook.published}</p>
+                                <p>{theBook.language}</p>
+                                <p>{theBook.title}</p>
+                                <p>{theBook.isbn10}</p>
+                                <p>{theBook.isbn13}</p>
+                              </S.ModalInfos>
+                            </S.ModalContainerInfo>
+                            <S.ModalResenha>
+                              <S.ModalResenhaTitle>
+                                <p>Resenha da Editora</p>
+                              </S.ModalResenhaTitle>
+                              <S.ModalResenhaContent>
+                                <p>{theBook.description}</p>
+                              </S.ModalResenhaContent>
+                            </S.ModalResenha>
+                          </S.ModalGridDescription>
+
+                        </S.ModalGrid>
 
                       </S.DialogDescription>
                       <Dialog.Close> X </Dialog.Close>
                     </S.DialogContent>
                   </Dialog.Portal>
                 </Dialog.Root>
+
               );
             })}
         </S.Grid>
