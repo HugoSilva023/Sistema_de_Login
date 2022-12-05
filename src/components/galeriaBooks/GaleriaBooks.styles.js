@@ -67,20 +67,34 @@ export const DialogOverlay = styled(Dialog.Overlay) `
     animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
 
+export const BookInfoWapper = styled.div`
+    display: grid;
+    flex: 1 1 276px
+`
+
 export const DialogContent = styled(Dialog.Content)`
     background-color: white;
+    /* margin: 0 16px; */
     border-radius: 4px;
     box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 769px;
-    height: 608px;
+    width: 90vw;
+    max-width: 769px;
+    height: 90vh;
+    overflow: auto;
+    transform: translate(-50%, -50%);   
+    /* width: 769px; */
+    /* height: 608px; */
 //    max-width: 450px;
 //    max-height: 85vh;
     padding: 25px;
     animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    /* display: flex; */
+    gap: 48px;
+    display: flex;
+    flex-wrap: wrap;
 `
 // Grid do Modal
 export const DialogDescription = styled(Dialog.Description)`
@@ -88,29 +102,40 @@ export const DialogDescription = styled(Dialog.Description)`
     color: violet;
     font-size: 15px;
     line-height: 1.5;
+    
 `
 
 export const ModalGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+display: flex;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
 `
 
 export const ModalGridImage = styled.div`
-    grid-area: left;
+    flex: 1 1 350px;
+    /* grid-area: left; */
+
+    & img {
+        display: block;
+        object-fit: cover;
+        max-height: 100%;
+        width: 100%;
+    }
+
 `
 export const ModalGridDescription = styled.div`
-    grid-area: right;
+    /* grid-area: right; */
 `
 
 export const ModalImg = styled.img`
-    position: absolute;
-    width: 349px;
-    height: 512.29px;
+    /* position: absolute; */
+    /* width: 349px; */
+    /* height: 512.29px; */
     filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
 `
 
 export const ModalTitle = styled.div`
-    width: 276px;
+    /* width: 276px; */
 
     padding-bottom: 0;
 
@@ -120,9 +145,9 @@ export const ModalTitle = styled.div`
 `
 
 export const ModalAuthor = styled.div`
-    width: 276px;
-    height: 20px;
-    margin-left: 400px;
+    /* width: 276px; */
+    /* height: 20px; */
+    /* margin-left: 400px; */
 
     font-family: 'Heebo Regular';
     font-size: 12px;
@@ -131,12 +156,12 @@ export const ModalAuthor = styled.div`
 `
 
 export const ModalContainerInfo = styled.div`
-    display: grid;
-    margin-left: 220px;
+    /* display: grid; */
+    /* margin-left: 220px; */
 `
 
 export const ModalTags = styled.div`
-    grid-area: left;
+    /* grid-area: left; */
 
     font-family: 'Heebo Medium';
     font-size: 12px;
@@ -145,7 +170,7 @@ export const ModalTags = styled.div`
 `
 
 export const ModalInfos = styled.div`
-    grid-area: right;
+    /* grid-area: right; */
 
     font-family: 'Heebo Regular';
     font-size: 12px;
@@ -154,7 +179,7 @@ export const ModalInfos = styled.div`
 `
 
 export const ModalResenha = styled.div`
-    margin-left: 400px;
+    /* margin-left: 400px; */
 `
 
 export const ModalResenhaTitle = styled.div`
