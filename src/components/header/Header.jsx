@@ -24,23 +24,19 @@ const Header = () => {
     }
 
   return (
-    <div>
-        <div className="row justify-content-between pb-4 pt-4">
-            <div className="col-5 display-block">
-                <img src={Logo} alt="Ioasys logo"/>
-                <span className="align-bottom d-xs-inline">
-                    <S.LogoBook>Books</S.LogoBook>
-                </span>
-            </div>
-            <div className="col-3">
-                <span className="d-none d-md-block d-lg-inline">Bem vindo, {userName}! </span>
-                <S.LogoutButton onClick={logout}>
-                    <S.IconBack src={Chave} alt="Ioasys logo"/>
-                    <S.IconRight src={Seta} alt="Ioasys logo"/>
-                </S.LogoutButton>
-            </div>
-        </div>
-    </div>
+    <S.Grid>
+        <S.AreaLogo>
+            <img className='pb-2' src={Logo} alt="Ioasys logo"/>
+            <S.LogoBook>Books</S.LogoBook>
+        </S.AreaLogo>
+        <S.AreaLogout>
+            <S.Reception> Bem vindo, <S.Name>{userName}</S.Name>! </S.Reception>
+            <S.LogoutButton onClick={logout}>
+                <S.IconBack src={Chave} alt="Ioasys logo"/>
+                <S.IconRight src={Seta} alt="Ioasys logo"/>
+            </S.LogoutButton>
+        </S.AreaLogout>
+    </S.Grid>
   )
 }
 

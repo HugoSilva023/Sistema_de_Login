@@ -2,7 +2,9 @@ import styled from "styled-components";
 import bkg from "./images/Background.png";
 
 export const Body = styled.div`
-    position: relative;
+    border: 0;
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
 
