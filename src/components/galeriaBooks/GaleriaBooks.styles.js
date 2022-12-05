@@ -72,12 +72,14 @@ export const DialogContent = styled(Dialog.Content)`
     border-radius: 4px;
     box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
     position: fixed;
+    overflow: scroll;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 769px;
+//    width: 100%;
     height: 608px;
-//    max-width: 450px;
+    margin: 16px;
+//    max-width: 1080px;
 //    max-height: 85vh;
     padding: 25px;
     animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -90,16 +92,30 @@ export const DialogDescription = styled(Dialog.Description)`
     line-height: 1.5;
 `
 
+export const DialogClose = styled(Dialog.Close)`
+    border-radius: 100%;
+    border: none;
+    padding: 0 8px;
+    position: fixed;
+    top: 0px;
+    margin-left: auto;
+`
+
+export const AreaClose = styled.span`
+    cursor: pointer;
+`
+
 export const ModalGrid = styled.div`
     display: grid;
+    gap: 50px;
     grid-template-columns: 1fr 1fr;
 `
 
 export const ModalGridImage = styled.div`
-    grid-area: left;
+    width: 350px;
 `
 export const ModalGridDescription = styled.div`
-    grid-area: right;
+    width: 350px;
 `
 
 export const ModalImg = styled.img`
@@ -112,7 +128,9 @@ export const ModalImg = styled.img`
 export const ModalTitle = styled.div`
     width: 276px;
 
-    padding-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     font-family: 'Heebo Medium';
     font-size: 28px;
@@ -122,7 +140,7 @@ export const ModalTitle = styled.div`
 export const ModalAuthor = styled.div`
     width: 276px;
     height: 20px;
-    margin-left: 400px;
+//    margin-left: 400px;
 
     font-family: 'Heebo Regular';
     font-size: 12px;
@@ -132,11 +150,14 @@ export const ModalAuthor = styled.div`
 
 export const ModalContainerInfo = styled.div`
     display: grid;
-    margin-left: 220px;
+    grid-template-columns: repeat(2, 1fr);
+//    margin-left: 220px;
 `
 
 export const ModalTags = styled.div`
-    grid-area: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
 
     font-family: 'Heebo Medium';
     font-size: 12px;
@@ -145,8 +166,6 @@ export const ModalTags = styled.div`
 `
 
 export const ModalInfos = styled.div`
-    grid-area: right;
-
     font-family: 'Heebo Regular';
     font-size: 12px;
     text-align: right;
@@ -154,7 +173,7 @@ export const ModalInfos = styled.div`
 `
 
 export const ModalResenha = styled.div`
-    margin-left: 400px;
+//    margin-left: 400px;
 `
 
 export const ModalResenhaTitle = styled.div`

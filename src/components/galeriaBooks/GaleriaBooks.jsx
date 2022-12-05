@@ -132,8 +132,8 @@ function GaleriaBooks() {
                         </S.ModalGrid>
 
                       </S.DialogDescription>
-                      <Dialog.Close> X </Dialog.Close>
                     </S.DialogContent>
+                    <S.AreaClose><S.DialogClose> X </S.DialogClose></S.AreaClose>
                   </Dialog.Portal>
                 </Dialog.Root>
 
