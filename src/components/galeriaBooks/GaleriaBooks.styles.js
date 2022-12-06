@@ -78,7 +78,7 @@ export const DialogContent = styled(Dialog.Content)`
     transform: translate(-50%, -50%);
 //    width: 100%;
     height: 608px;
-    margin: 16px;
+    margin: 16px 0;
 //    max-width: 1080px;
 //    max-height: 85vh;
     padding: 25px;
@@ -97,31 +97,32 @@ export const DialogClose = styled(Dialog.Close)`
     border: none;
     padding: 0 8px;
     position: fixed;
-    top: 0px;
-    margin-left: auto;
-`
-
-export const AreaClose = styled.span`
-    cursor: pointer;
+    top: 16px;
+    right: 17px;
 `
 
 export const ModalGrid = styled.div`
     display: grid;
     gap: 50px;
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 860px) {
+        display: block;
+    }
 `
 
 export const ModalGridImage = styled.div`
-    width: 350px;
+    width: 100%;
 `
 export const ModalGridDescription = styled.div`
-    width: 350px;
+    width: 100%;
 `
 
 export const ModalImg = styled.img`
-    position: absolute;
-    width: 349px;
-    height: 512.29px;
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+    margin-bottom: 24px;
     filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
 `
 
@@ -140,40 +141,11 @@ export const ModalTitle = styled.div`
 export const ModalAuthor = styled.div`
     width: 276px;
     height: 20px;
-//    margin-left: 400px;
 
     font-family: 'Heebo Regular';
     font-size: 12px;
     /* identical to box height, or 167% */
     color: ${props => props.theme.colors.pink40};
-`
-
-export const ModalContainerInfo = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-//    margin-left: 220px;
-`
-
-export const ModalTags = styled.div`
-    margin: 0;
-    padding: 0;
-    border: 0;
-
-    font-family: 'Heebo Medium';
-    font-size: 12px;
-    text-align: left;
-    color: ${props => props.theme.colors.black};
-`
-
-export const ModalInfos = styled.div`
-    font-family: 'Heebo Regular';
-    font-size: 12px;
-    text-align: right;
-    color: ${props => props.theme.colors.grey};
-`
-
-export const ModalResenha = styled.div`
-//    margin-left: 400px;
 `
 
 export const ModalResenhaTitle = styled.div`

@@ -3,6 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import './styles.css';
 
 import { AuthContext } from "../../contexts/Authenticator";
+import ListDescription from "../listDescription/ListDescription"
 
 import * as S from "./GaleriaBooks.styles";
 import api from "../../services/api";
@@ -94,46 +95,24 @@ function GaleriaBooks() {
                             <S.ModalTitle>{theBook.title}</S.ModalTitle>
 
                             <S.ModalAuthor>{theBook.authors && theBook.authors.join(", ")}</S.ModalAuthor>
-                            <S.ModalContainerInfo>
-                              <S.ModalTags>
-                                <p>INFORMAÇÕES</p>
-                                <br />
-                                <p>Páginas</p>
-                                <p>Editora</p>
-                                <p>Publicação</p>
-                                <p>Idioma</p>
-                                <p>Titulo Original</p>
-                                <p>ISBN-10</p>
-                                <p>ISBN-13</p>
-                              </S.ModalTags>
-                              <S.ModalInfos>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{theBook.pageCount} páginas</p>
-                                <p>Editora {theBook.publisher}</p>
-                                <p>{theBook.published}</p>
-                                <p>{theBook.language}</p>
-                                <p>{theBook.title}</p>
-                                <p>{theBook.isbn10}</p>
-                                <p>{theBook.isbn13}</p>
-                              </S.ModalInfos>
-                            </S.ModalContainerInfo>
-                            <S.ModalResenha>
-                              <S.ModalResenhaTitle>
-                                <p>Resenha da Editora</p>
-                              </S.ModalResenhaTitle>
-                              <S.ModalResenhaContent>
-                                <p>{theBook.description}</p>
-                              </S.ModalResenhaContent>
-                            </S.ModalResenha>
+                            
+                            <ListDescription theBook />
+
+                              
+                            <S.ModalResenhaTitle>
+                              <p>Resenha da Editora</p>
+                            </S.ModalResenhaTitle>
+
+                            <S.ModalResenhaContent>
+                              <p>{theBook.description}</p>
+                            </S.ModalResenhaContent>
                           </S.ModalGridDescription>
 
                         </S.ModalGrid>
 
                       </S.DialogDescription>
                     </S.DialogContent>
-                    <S.AreaClose><S.DialogClose> X </S.DialogClose></S.AreaClose>
+                    <S.DialogClose> X </S.DialogClose>
                   </Dialog.Portal>
                 </Dialog.Root>
 
